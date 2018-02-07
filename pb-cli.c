@@ -44,7 +44,7 @@ int setup(void) {
 	char s_token[37];
 
 	printf("Please enter your access token. It can be found at https://www.pushbullet.com/#settings/account\n");
-	fgets(s_token, 35, stdin);
+	fgets(s_token, 36, stdin);
 	strcat(s_token, " ");
 	FILE *s_token_file = fopen(token_filename, "w");
 	fprintf(s_token_file, "%s", s_token);
