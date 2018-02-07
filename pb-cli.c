@@ -54,7 +54,7 @@ int setup(void) {
 
 int base_var_init(void) {
 	strcpy(app_folder, getenv("HOME"));
-	strcat(app_folder, "/codes/Pushbullet-test/.pb-cli/");
+	strcat(app_folder, "/.pb-cli/");
 
 	strcpy(token_filename, app_folder);
 	strcat(token_filename, "token");
