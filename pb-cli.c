@@ -43,6 +43,12 @@ void clear_buffer(void) {
 int setup(void) {
 	char s_token[37];
 
+	struct stat dir_check;
+	if (stat(app_folder, &dir_check) == 0 && S_ISDIR(dir_check.st_mode)) {
+	} else {
+		mkdir(app_folder, 0755);
+	}
+
 	printf("Please enter your access token. It can be found at https://www.pushbullet.com/#settings/account\n");
 	fgets(s_token, 36, stdin);
 	strcat(s_token, " ");
