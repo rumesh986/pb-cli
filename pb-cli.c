@@ -50,7 +50,7 @@ int setup(void) {
 	}
 
 	printf("Please enter your access token. It can be found at https://www.pushbullet.com/#settings/account\n");
-	fgets(s_token, 36, stdin);
+	fgets(s_token, 35, stdin);
 	strcat(s_token, " ");
 	FILE *s_token_file = fopen(token_filename, "w");
 	fprintf(s_token_file, "%s", s_token);
@@ -170,7 +170,6 @@ size_t get_stream_cb(char *data, size_t size, size_t nmemb) {
 }
 
 void *get_stream() {
-	char *user_response;
 	CURL *get_stream_handle = curl_easy_init();
 
 	curl_easy_setopt(get_stream_handle, CURLOPT_URL, url_string);
